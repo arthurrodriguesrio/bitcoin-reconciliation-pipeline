@@ -66,3 +66,39 @@ python src/main.py
 
 The pipeline generates reconciled Bitcoin market data stored in the `data/` directory.
 
+
+## 🇧🇷 Versão em Português
+
+### Visão Geral
+
+Este projeto implementa um pipeline modular de dados que:
+
+- Coleta dados de mercado de Bitcoin via API
+- Normaliza e valida os dados
+- Executa lógica de reconciliação
+- Armazena os dados processados
+- Gera análises
+
+A arquitetura segue uma estrutura limpa e modular dentro do diretório `src/`.
+
+---
+
+### Como Executar
+
+1. Instale as dependências:
+
+
+pip install -r requirements.txt
+
+
+2. Execute o pipeline:
+
+
+python src/main.py
+
+
+---
+
+### Resultado
+
+O pipeline gera dados reconciliados de mercado de Bitcoin armazenados no diretório `data/`.
