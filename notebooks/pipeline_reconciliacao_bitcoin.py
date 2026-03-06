@@ -154,5 +154,3 @@ Original file is located at
 # if __name__ == "__main__":
 #   main()
 
-!python main.py
-
