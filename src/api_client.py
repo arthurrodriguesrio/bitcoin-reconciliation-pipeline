@@ -8,13 +8,17 @@ def get_bitcoin_prices(days=30):
         "vs_currency": "usd",
         "days": days
     }
+    
+    try:
+      response = requests.get(url, params=params, timeout=10)
+      response.raise_for_status()
 
-    response = requests.get(url, params=params)
-    response.raise_for_status()
+      data = response.json()
+      prices = data["prices"]
 
-    data = response.json()
-
-    prices = data["prices"]
-
-    df = pd.DataFrame(prices, columns=["timestamp", "price"])
-    return df
+      df = pd.DataFrame(prices, columns=["timestamp", "price"])
+      return df
+    
+    except requests.exceptions.RequestException as e:
+        print(f"Erro na requisição da API: {e}")
+        return None
